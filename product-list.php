@@ -47,7 +47,7 @@ include 'dashboard.php'; ?>
                                 <td><?php echo $row['pid']?></td>
                                 <td><?php echo $row['pname']?></td>
                                 <td style="width: 20%;"><?php echo $row['pshortdesc']?> </td>
-                                <td  style="width: 70%;"><?php echo $row['plongdesc']?> </td>
+                                <td  style="width: 70%;"><p style="min-height: 100px;max-height:100px;overflow:auto;"><?php echo $row['plongdesc']?></p> </td>
                                 <td><img src="productimg/<?php echo $row['pimg']?>" width="100px" /></td>
                                 <td >$<?php echo $row['pprice']?> </td>
                                 <td ><?php echo $row['catname']?> </td>
@@ -62,7 +62,7 @@ include 'dashboard.php'; ?>
                                     }
                                 ?> </td>
                                 <td>
-                                <a href="product-edit.php?id=<?php echo $row['catid']*103640?>" class="btn btn-warning btn-circle ">
+                                <a href="product-edit.php?id=<?php echo $row['pid']*103640?>" class="btn btn-warning btn-circle ">
                                         <i class="fas fa-exclamation-triangle"></i>
                                     </a>    
                                     <a onclick="myfun(<?php echo $row['pid']*103640?>)" class="btn btn-danger btn-circle ">
