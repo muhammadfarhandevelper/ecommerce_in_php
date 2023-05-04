@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
     <title>E Commerece Website</title>
 </head>
 <body>
@@ -17,10 +19,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="index.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Products</a>
+          <a class="nav-link" href="product.php">Products</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -34,19 +36,30 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          <a class="nav-link " href="#" tabindex="-1" aria-disabled="true">Disabled</a>
         </li>
+        
       </ul>
       
-      <ul>
+      <ul class="me-5">
 
       <?php
     session_start();
 
         if(isset($_SESSION['email'])){
-
-            echo "<img src='userimg/$_SESSION[img]' width='60px'/> <span> $_SESSION[email] </span> <a href='logout.php' class='btn btn-danger'>Logout</a>";
             
+          echo "
+          <div class='dropdown mx-2'>
+  <button class='btn btn-transparent dropdown-toggle' type='button' id='dropdownMenuButton1' data-bs-toggle='dropdown' aria-expanded='false'>
+  <img src='userimg/$_SESSION[img]' width='60px' style='border-raduis:50%;'/>
+  </button>
+  <ul class='dropdown-menu px-2' aria-labelledby='dropdownMenuButton1'>
+    <li><span> $_SESSION[email] </span></li><hr/>
+    <li><a href='logout.php' class=''>Logout</a></li>
+  </ul>
+</div>
+";
+
         }
         else{
 
@@ -65,5 +78,5 @@
 </nav>
 
 
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+

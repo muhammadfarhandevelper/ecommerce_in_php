@@ -64,6 +64,7 @@ if(isset($_POST['login'])){
         $_SESSION['email'] = $email;
         $_SESSION['img'] = $row['userimg'];
         $_SESSION['role'] = $row['role'];
+        $_SESSION['id'] = $row['userid'];
         
         header("location: index.php");
     }
