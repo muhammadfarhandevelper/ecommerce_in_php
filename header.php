@@ -1,3 +1,24 @@
+<?php
+
+session_start();
+
+$i = 0;
+
+if(isset($_SESSION['cart'])){
+  
+  $cart = $_SESSION['cart'];
+
+
+  foreach($cart as $item => $val){
+
+    $i++;
+  }
+
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,10 +62,12 @@
         
       </ul>
       
-      <ul class="me-5">
-
+      <ul class="me-5 d-flex list-unstyled">
+      <div>
+      <li><a href="sess.php" class="text-decoration-none text-dark"> Cart <sup><b> <?php echo $i?></sup></b> </a></li>
+      </div>
       <?php
-    session_start();
+
 
         if(isset($_SESSION['email'])){
             
